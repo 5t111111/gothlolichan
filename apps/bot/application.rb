@@ -1,6 +1,3 @@
-require 'hanami/helpers'
-require 'hanami/assets'
-
 module Bot
   class Application < Hanami::Application
     configure do
