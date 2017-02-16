@@ -2,6 +2,7 @@ require 'bundler/setup'
 require 'hanami/setup'
 require 'hanami/model'
 require_relative '../lib/gothlolichan'
+require_relative '../apps/bot/application'
 require_relative '../apps/webhook/application'
 
 Hanami.configure do
