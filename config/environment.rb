@@ -6,7 +6,7 @@ require_relative '../apps/bot/application'
 require_relative '../apps/webhook/application'
 
 Hanami.configure do
-  mount Webhook::Application, at: '/'
+  mount Webhook::Application, at: '/webhook'
 
   model do
     ##
