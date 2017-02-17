@@ -1,16 +1,7 @@
+require_relative 'worker'
+
 module Bot
   class Application < Hanami::Application
-    configure do
-    end
+    Worker.new.run
   end
-end
-
-begin
-  Thread.new do
-    Robot.run
-  end
-
-rescue => e
-  puts "error! : #{e}"
-  retry
 end
