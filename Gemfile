@@ -12,6 +12,7 @@ gem 'slack-ruby-bot'
 gem 'celluloid-io'
 
 gem 'tapp', git: 'https://github.com/5t111111/tapp.git', branch: 'add-decoration-feature'
+gem 'pry-byebug'
 
 group :development do
   # Code reloading
