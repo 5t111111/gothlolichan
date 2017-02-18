@@ -95,7 +95,7 @@ module Webhook
       # Argument: Symbol, which represent the format of the mime type (only `:json` is supported)
       #           Object, the parser
       #
-      # body_parsers :json
+      body_parsers :json
 
       # When it's true and the router receives a non-encrypted request (http),
       # it redirects to the secure equivalent resource (https). Default disabled.
@@ -253,6 +253,7 @@ module Webhook
       controller.prepare do
         # include MyAuthentication # included in all the actions
         # before :authenticate!    # run an authentication before callback
+        include Webhook::Authorization
       end
 
       # Configure the code that will yield each time Webhook::View is included
