@@ -1,7 +1,7 @@
 require 'hanami/helpers'
 require 'hanami/assets'
 
-module Webhook
+module GithubWebhook
   class Application < Hanami::Application
     configure do
       ##
@@ -108,7 +108,7 @@ module Webhook
 
       # The layout to be used by all views
       #
-      layout :application # It will load Webhook::Views::ApplicationLayout
+      layout :application # It will load GithubWebhook::Views::ApplicationLayout
 
       # The relative path to templates
       #
@@ -246,23 +246,23 @@ module Webhook
       # FRAMEWORKS
       #
 
-      # Configure the code that will yield each time Webhook::Action is included
+      # Configure the code that will yield each time GithubWebhook::Action is included
       # This is useful for sharing common functionality
       #
       # See: http://www.rubydoc.info/gems/hanami-controller#Configuration
       controller.prepare do
         # include MyAuthentication # included in all the actions
         # before :authenticate!    # run an authentication before callback
-        include Webhook::Authorization
+        include GithubWebhook::Authorization
       end
 
-      # Configure the code that will yield each time Webhook::View is included
+      # Configure the code that will yield each time GithubWebhook::View is included
       # This is useful for sharing common functionality
       #
       # See: http://www.rubydoc.info/gems/hanami-view#Configuration
       view.prepare do
         include Hanami::Helpers
-        include Webhook::Assets::Helpers
+        include GithubWebhook::Assets::Helpers
       end
     end
 

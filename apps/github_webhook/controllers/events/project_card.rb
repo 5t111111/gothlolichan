@@ -1,6 +1,6 @@
-module Webhook::Controllers::Github
+module GithubWebhook::Controllers::Events
   class ProjectCard
-    include Webhook::Action
+    include GithubWebhook::Action
     accept :json
     before :check_webhook_secret
 

@@ -3,4 +3,4 @@
 #
 # Example:
 # get '/hello', to: ->(env) { [200, {}, ['Hello from Hanami!']] }
-post '/project_card', to: 'github#project_card'
+post '/project_card', to: 'events#project_card'

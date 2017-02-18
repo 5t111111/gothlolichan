@@ -1,7 +1,7 @@
-module Webhook
+module GithubWebhook
   module Views
     class ApplicationLayout
-      include Webhook::Layout
+      include GithubWebhook::Layout
     end
   end
 end
