@@ -1,3 +1,5 @@
+require_relative 'robot'
+
 module Bot
   class Worker
     def run
