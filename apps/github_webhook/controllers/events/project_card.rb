@@ -17,8 +17,8 @@ module GithubWebhook::Controllers::Events
       client = Slack::Web::Client.new
       client.chat_postMessage(
         channel: ENV['SLACK_DEFAULT_CHANNEL'],
-        text: "プロジェクトにノートが追加されました [#{project_card.note}] by #{project_card.username}",
-        as_user: true
+        as_user: true,
+        attachments: project_card.attachments
       )
     end
   end
