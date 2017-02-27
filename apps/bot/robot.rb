@@ -11,15 +11,17 @@ class Robot < SlackRubyBot::Bot
   end
 
   command 'latex' do |client, data, match|
+    expression = match.named_captures['expression']
+    escaped_expression = URI.escape(expression)
     client = Slack::Web::Client.new
     client.chat_postMessage(
       channel: data.channel,
       as_user: true,
       attachments: [
         {
-          fallback: match,
-          title: match,
-          image_url: "http://latex.codecogs.com/gif.latex?#{match.named_captures['expression']}",
+          fallback: expression,
+          title: expression,
+          image_url: "http://latex.codecogs.com/png.latex?#{escaped_expression}",
           color: '#37474F'
         }
       ].to_json
