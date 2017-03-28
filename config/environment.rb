@@ -2,10 +2,12 @@ require 'bundler/setup'
 require 'hanami/setup'
 require 'hanami/model'
 require_relative '../lib/gothlolichan'
+require_relative '../apps/web/application'
 require_relative '../apps/bot/application'
 require_relative '../apps/github_webhook/application'
 
 Hanami.configure do
+  mount Web::Application, at: '/'
   mount GithubWebhook::Application, at: '/webhook'
 
   model do
